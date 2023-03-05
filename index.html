@@ -9,8 +9,10 @@
 </head>
 <body>
     <div id="mainContainer">
-        <div id="gridContainer">
-        </div>
+        <label for="quantity">Number of Squares Per Side (1-100):</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="100" required>
+        <input type="button" value="Submit" onclick="makeGrid()">
+        <div id="gridContainer"></div>
     </div>
 </body>
 </html>
