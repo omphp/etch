@@ -5,14 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <title>Etch a Sketch</title>
 </head>
-<body>
+<body id="body">
     <div id="mainContainer">
-        <label for="quantity">Number of Squares Per Side (1-100):</label>
-        <input type="number" id="quantity" name="quantity" min="1" max="100" required>
-        <input type="button" value="Submit" onclick="makeGrid()">
         <div id="gridContainer"></div>
+        <div id="popup" style="display: flex;">
+            <div id="content">
+                <div id="titleContainer">
+                    <p class="title">Esc To Toggle Menu</p>
+                    <button onclick="closePop()" id="close" ><p class="title">X</p></button>
+                </div>
+                <label for="quantity"><p class="title">Grid Size</p></label>
+                <div><input oninput="validate()" type="number" id="quantity" name="quantity" maxlength="3" step="1" min="1" max="100" autofocus>
+                    <pre class="title">    X    </pre>
+                    <p id="reflect" class="title">16</p>
+                </div>
+                <div id="rainbow">
+                    <button onclick="addLstnr(rainbow, 'rainbow')" id="rainbowBtn" >
+                        <p class="title">
+                            <span style='color: blue'>R</span>
+                            <span style='color: red'>A</span>
+                            <span style='color: rgb(16, 97, 0)'>I</span>
+                            <span style='color: rgb(183, 0, 255)'>N</span>
+                            <span style='color: rgb(255, 124, 2)'>B</span>
+                            <span style='color: rgb(31, 255, 42)'>O</span>
+                            <span style='color: rgb(0, 204, 255)'>W</span>
+                        </p>
+                    </button>
+                </div>
+                <div id="darken">
+                    <button onclick="addLstnr(darken, 'darken')" id="darkenBtn" >
+                        <pre class="title">B L A C K</pre>
+                    </button>
+                </div>
+                <div id="shade">
+                    <button onclick="addLstnr(shade, 'shade')" id="shadeBtn" >
+                        <pre class="title">S H A D E</pre>
+                    </button>
+                </div>
+                <div id="clear">
+                    <button onclick="clear1()" id="clearBtn" >
+                        <pre class="title">C L E A R</pre>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
     </div>
+    
 </body>
 </html>
