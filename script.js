@@ -40,6 +40,7 @@ for (let indexM = 1; indexM <= 16; indexM++) {
             element.addEventListener("mousedown",darken);
             element.addEventListener("mousedown",addOverLstnr);
             element.addEventListener("mouseup", removeOverLstnr);
+            element.setAttribute('draggable', 'false')
             element.ondragstart = function() { return false; }
             gridContainer.appendChild(element);
         }
@@ -58,6 +59,8 @@ function makeGrid()
                 element.addEventListener("mousedown", shadeBtn.disabled?shade:rainbowBtn.disabled?rainbow:darken);
                 element.addEventListener("mousedown",addOverLstnr);
                 element.addEventListener("mouseup", removeOverLstnr);
+                element.setAttribute('draggable', 'false')
+                element.ondragstart = function() { return false; }
                 gridContainer.appendChild(element);
             }
     }
